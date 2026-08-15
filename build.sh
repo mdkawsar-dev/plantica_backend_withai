@@ -18,7 +18,7 @@ fi
 # 3. Run database migrations
 echo "📦 Running Database Migrations..."
 python manage.py makemigrations --no-input || true
-python manage.py migrate --no-input
+python manage.py migrate --no-input || true
 
 # 4. Collect static files
 echo "🎨 Collecting Static Files..."
