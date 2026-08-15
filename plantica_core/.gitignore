@@ -1,0 +1,32 @@
+# Python virtual environment
+../env/
+env/
+venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django specific
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Media / Uploaded User Files
+media/*
+!media/.gitkeep
+
+# Environment variables & secrets
+.env
+.env.local
+.env.*
+
+# macOS system files
+.DS_Store
+.AppleDouble
+
+# Editor & IDE settings
+.vscode/
+.idea/

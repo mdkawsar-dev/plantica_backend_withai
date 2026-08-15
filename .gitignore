@@ -1,0 +1,56 @@
+# Python virtual environment
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Django specific
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Media / Uploaded User Files
+media/
+plantica_core/media/*
+!plantica_core/media/.gitkeep
+
+# Environment variables & secrets
+.env
+.env.local
+.env.*
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSSharedFileList
+.Spotlight-V100
+.Trashes
+
+# Editor & IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Pytest / Coverage / Tooling
+.cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ML Model files (Allow plantica trained model to be tracked)
+!plantica_core/disease/ml_models/best_model.keras
+!plantica_core/disease/ml_models/classes.json
+!plantica_core/disease/ml_models/labels.txt
