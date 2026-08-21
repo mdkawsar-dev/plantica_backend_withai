@@ -99,23 +99,21 @@ Output strictly valid JSON with this exact schema:
 """
 
     import requests
-    # Valid Google Gemini models to try in order
+    # Valid Google Gemini models to try in order (gemini-flash-lite-latest is verified active)
     candidate_models = [
-        "gemini-1.5-flash",
-        "gemini-2.0-flash",
-        "gemini-1.5-pro",
-        "gemini-2.5-flash",
-        "gemini-flash-latest"
+        "gemini-flash-lite-latest",
+        "gemini-flash-latest",
+        "gemini-pro-latest"
     ]
     
     payload = {
         "contents": [{
             "parts": [
                 {"text": prompt},
-                {"inline_data": {"mime_type": "image/jpeg", "data": b64_img}}
+                {"inlineData": {"mimeType": "image/jpeg", "data": b64_img}}
             ]
         }],
-        "generationConfig": {"response_mime_type": "application/json"}
+        "generationConfig": {"responseMimeType": "application/json"}
     }
 
     response = None
@@ -124,7 +122,7 @@ Output strictly valid JSON with this exact schema:
     for model_name in candidate_models:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={gemini_key}"
         try:
-            r = requests.post(url, json=payload, timeout=20)
+            r = requests.post(url, json=payload, timeout=25)
             if r.status_code == 200:
                 response = r
                 break
