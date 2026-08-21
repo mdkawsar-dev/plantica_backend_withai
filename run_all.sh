@@ -17,17 +17,20 @@ echo -e "${GREEN}       Starting Plantica Core Backend Engine       ${NC}"
 echo -e "${CYAN}====================================================${NC}"
 
 # 1. Check & Setup Python Virtual Environment Executable
-VENV_PATH="$SCRIPT_DIR/env"
-if [ -f "$VENV_PATH/bin/python" ]; then
+if [ -f "$SCRIPT_DIR/plantica_core/venv/bin/python" ]; then
+    echo -e "${GREEN}[1/4] Activating Virtual Environment (plantica_core/venv)...${NC}"
+    source "$SCRIPT_DIR/plantica_core/venv/bin/activate"
+    PYTHON_EXEC="$SCRIPT_DIR/plantica_core/venv/bin/python"
+elif [ -f "$SCRIPT_DIR/env/bin/python" ]; then
     echo -e "${GREEN}[1/4] Activating Virtual Environment (env)...${NC}"
-    source "$VENV_PATH/bin/activate"
-    PYTHON_EXEC="$VENV_PATH/bin/python"
-elif [ -f "$VENV_PATH/bin/python3" ]; then
+    source "$SCRIPT_DIR/env/bin/activate"
+    PYTHON_EXEC="$SCRIPT_DIR/env/bin/python"
+elif [ -f "$SCRIPT_DIR/env/bin/python3" ]; then
     echo -e "${GREEN}[1/4] Activating Virtual Environment (env)...${NC}"
-    source "$VENV_PATH/bin/activate"
-    PYTHON_EXEC="$VENV_PATH/bin/python3"
+    source "$SCRIPT_DIR/env/bin/activate"
+    PYTHON_EXEC="$SCRIPT_DIR/env/bin/python3"
 else
-    echo -e "${YELLOW}[1/4] Virtual environment 'env' not found. Using system python...${NC}"
+    echo -e "${YELLOW}[1/4] Virtual environment not found. Using system python...${NC}"
     PYTHON_EXEC="python3"
 fi
 

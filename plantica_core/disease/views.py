@@ -61,6 +61,11 @@ class DiseaseDiagnosisLogViewSet(viewsets.ModelViewSet):
 # =========================================================================
 #  1️⃣ Helper: Helper to save diagnosis scan log for authenticated users
 # =========================================================================
+def to_bn_num(val):
+    en_bn = {'0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯','.':'.','-':'-'}
+    return ''.join(en_bn.get(c, c) for c in str(val))
+
+
 def _save_diagnosis_log(request, image_file, confidence):
     diagnosis_log_id = None
     if request.user and request.user.is_authenticated:
@@ -116,7 +121,7 @@ class DiseaseDetectionAiView(APIView):
             diagnosis_log_id = _save_diagnosis_log(request, image_file, confidence)
 
             response_payload = {
-                "detection_engine": "Generative AI Vision",
+                "detection_engine": "Analysis with AI",
                 "diagnosis_log_id": diagnosis_log_id,
                 "plant_name": ai_result.get("plant_name", plant_name or "গাছ"),
                 "formatted_title": ai_result.get("formatted_title", "সনাক্তকৃত রোগ"),
@@ -172,19 +177,38 @@ class DiseaseDetectionMlView(APIView):
             predictor = PlantDiseasePredictor()
             raw_disease, confidence = predictor.predict_image(image_file, plant_name=plant_name)
 
-            # ২. চিকিৎসা ও প্রতিরোধ টিপস আনা
+            # ২. নন-প্ল্যান্ট অবজেক্ট চেক
+            if raw_disease == "Non_Plant_Object":
+                display_plant_name = "গাছ সনাক্ত হয়নি"
+                ai_data = get_disease_advice_from_openai(display_plant_name, raw_disease)
+                confidence_text = "পাতার ছবি নয়"
+                success_msg = "কোনো গাছের পাতা সনাক্ত করা যায়নি। অনুগ্রহ করে পরিষ্কার পাতার ছবি দিন।"
+                
+                diagnosis_log_id = _save_diagnosis_log(request, image_file, confidence)
+                response_payload = {
+                    "detection_engine": "Analysis with Plantica",
+                    "diagnosis_log_id": diagnosis_log_id,
+                    "plant_name": display_plant_name,
+                    "formatted_title": ai_data.get("formatted_title", "কোনো গাছের পাতা সনাক্ত করা যায়নি"),
+                    "raw_disease_label": raw_disease,
+                    "confidence_percentage": confidence,
+                    "confidence_text": confidence_text,
+                    "severity": "অপ্রাসঙ্গিক ছবি",
+                    "treatment_plan": ai_data.get("treatment_plan", []),
+                    "prevention_guide": ai_data.get("prevention_guide", [])
+                }
+                return custom_response(data=response_payload, message=success_msg, code=status.HTTP_200_OK, status=True)
+
+            # ৩. Deep Learning ফলাফল প্রস্তুতকরণ (বিশুদ্ধ ML প্রেডিকশন)
             display_plant_name = plant_name if plant_name and plant_name.strip() and plant_name != 'গাছের নাম জানা নেই' else "গাছ"
             ai_data = get_disease_advice_from_openai(display_plant_name, raw_disease)
-
-            def to_bn_num(val):
-                en_bn = {'0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯','.':'.','-':'-'}
-                return ''.join(en_bn.get(c, c) for c in str(val))
-
             confidence_text = f"{to_bn_num(confidence)}% নিশ্চিত"
+            success_msg = "মেশিন লার্নিং মডেল দিয়ে রোগ সফলভাবে সনাক্ত করা হয়েছে"
+
             diagnosis_log_id = _save_diagnosis_log(request, image_file, confidence)
 
             response_payload = {
-                "detection_engine": "Deep Learning (EfficientNetV2)",
+                "detection_engine": "Analysis with Plantica",
                 "diagnosis_log_id": diagnosis_log_id,
                 "plant_name": display_plant_name,
                 "formatted_title": ai_data.get("formatted_title", f"{display_plant_name}: {raw_disease}"),
@@ -198,7 +222,7 @@ class DiseaseDetectionMlView(APIView):
 
             return custom_response(
                 data=response_payload,
-                message="মেশিন লার্নিং মডেল দিয়ে রোগ সফলভাবে সনাক্ত করা হয়েছে",
+                message=success_msg,
                 code=status.HTTP_200_OK,
                 status=True
             )

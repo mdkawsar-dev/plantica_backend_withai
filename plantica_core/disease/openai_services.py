@@ -186,6 +186,54 @@ EXPERT_DISEASE_DB = {
             "৪. সংক্রামিত গাছের বীজ সংগ্রহ করবেন না।"
         ]
     },
+    "Tomato_leaf_mosaic_virus": {
+        "title": "মোজাইক ও পাতা কোঁকড়ানো ভাইরাস রোগ (Mosaic / Leaf Curl Virus)",
+        "severity": "তীব্র ঝুঁকি",
+        "treatment": [
+            "১. ভাইরাসের কোনো প্রত্যক্ষ রাসায়নিক নিরাময় নেই, মারাত্মক আক্রান্ত গাছ তুলে পুড়িয়ে বা মাটিতে পুঁতে ফেলুন।",
+            "২. ভাইরাসের বাহক পোকা (সাদা মাছি ও থ্রিপস) দমনে ইমিডাক্লোপ্রিড (এডমায়ার/টিডো) প্রতি লিটার পানিতে ০.৫ মিলি স্প্রে করুন।",
+            "৩. আক্রমণ বেশি হলে অ্যাসিটামিপ্রিড বা ডায়াফেনথিউরন স্প্রে করুন।",
+            "৪. জমিতে হলুদ আঠালো ফাঁদ (Yellow Sticky Trap) স্থাপন করে বাহক পোকা নিয়ন্ত্রণ করুন।"
+        ],
+        "prevention": [
+            "১. রোগমুক্ত ও প্রত্যয়িত সুস্থ চারা রোপণ করুন।",
+            "২. নিয়মিত জৈব নিম তেল স্প্রে করে বাহক পোকার বিস্তার রোধ করুন।",
+            "৩. জমির চারপাশের আগাছা পরিষ্কার রাখুন।",
+            "৪. চারা অবস্থায় মশারি বা নেট দিয়ে ঢেকে রাখুন।"
+        ]
+    },
+    "Tomato_leaf_yellow_virus": {
+        "title": "পাতা হলুদ ও কোঁকড়ানো ভাইরাস রোগ (Yellow Leaf Curl Virus)",
+        "severity": "তীব্র ঝুঁকি",
+        "treatment": [
+            "১. আক্রান্ত গাছ দ্রুত উপড়ে ফেলে বাগান থেকে দূরে ধ্বংস করুন।",
+            "২. সাদা মাছি দমনে ইমিডাক্লোপ্রিড (টিডো) ০.৫ মিলি/লিটার স্প্রে করুন।",
+            "৩. সাবান পানি ও নিম তেলের মিশ্রণ স্প্রে করে পোকা নিয়ন্ত্রণ করুন।",
+            "৪. সুষম অনুখাদ্য ও জিংক স্প্রে করে গাছের সতেজতা ফিরিয়ে আনুন।"
+        ],
+        "prevention": [
+            "১. রোগ প্রতিরোধী উন্নত জাত রোপণ করুন।",
+            "২. হলুদ স্টিকি ট্র্যাপ ব্যবহার করুন।",
+            "৩. অতিরিক্ত নাইট্রোজেন সার দেওয়া পরিহার করুন।",
+            "৪. বাগান নিয়মিত আগাছামুক্ত রাখুন।"
+        ]
+    },
+    "Tomato_leaf_curl_virus": {
+        "title": "পাতা কোঁকড়ানো ভাইরাস রোগ (Leaf Curl Virus)",
+        "severity": "তীব্র ঝুঁকি",
+        "treatment": [
+            "১. চরম আক্রান্ত গাছ তুলে পুড়িয়ে ফেলুন যাতে অন্য গাছে রোগ না ছড়ায়।",
+            "২. বাহক পোকা দমনে ইমিডাক্লোপ্রিড গ্রুপের কীটনাশক (এডমায়ার) ০.৫ মিলি/লিটার স্প্রে করুন।",
+            "৩. হলুদ ফাঁদ ব্যবহার করে পোকা দমন নিশ্চিত করুন।",
+            "৪. সুষম সার ও তরল জৈব সার স্প্রে করুন।"
+        ],
+        "prevention": [
+            "১. রোগ প্রতিরোধী বীজ নির্বাচন করুন।",
+            "২. চারা তৈরির সময় নেট হাউস ব্যবহার করুন।",
+            "৩. নিয়মিত পর্যবেক্ষণ করুন।",
+            "৪. জমির নিষ্কাশন ব্যবস্থা ভালো রাখুন।"
+        ]
+    },
     "Tomato_spotted_wilt": {
         "title": "টমেটো: স্পটেড উইল্ট ভাইরাস (TSWV)",
         "severity": "তীব্র ঝুঁকি",
@@ -466,6 +514,86 @@ EXPERT_DISEASE_DB = {
             "২. গাছের গোড়ায় ড্রিপ পদ্ধতিতে সেচ দিন।",
             "৩. ফসলের জমিতে প্রতি বছর মরিচ চাষ না করে অন্য ফসল চাষ করুন।",
             "৪. প্রতিরোধী জাতের মরিচ বীজ রোপণ করুন।"
+        ]
+    },
+    "Bell_pepper_leaf_spot": {
+        "title": "মরিচ: পাতার দাগ রোগ (Bell Pepper Leaf Spot)",
+        "severity": "মাঝারি ঝুঁকি",
+        "treatment": [
+            "১. আক্রান্ত পাতা ও ডালপালা দ্রুত সংগ্রহ করে নষ্ট করুন।",
+            "২. কার্বেন্ডাজিম গ্রুপের ছত্রাকনাশক (অটোস্টিন) ২ গ্রাম/লিটার স্প্রে করুন।",
+            "৩. ম্যানকোজেব বা কপার অক্সিক্লোরাইড স্প্রে করে বিস্তার ঠেকান।",
+            "৪. গাছের গোড়ায় পানি দিন, পাতায় পানি ছিটাবেন না।"
+        ],
+        "prevention": [
+            "১. রোগমুক্ত সুস্থ চারা ব্যবহার করুন।",
+            "২. জমিতে পানি নিষ্কাশন নিশ্চিত করুন।",
+            "৩. আগাছা পরিষ্কার রাখুন।",
+            "৪. সুষম সার প্রয়োগ করুন।"
+        ]
+    },
+    "Curl": {
+        "title": "মরিচ: পাতা কোঁকড়ানো ভাইরাস রোগ (Leaf Curl Virus)",
+        "severity": "তীব্র ঝুঁকি",
+        "treatment": [
+            "১. মারাত্মক আক্রান্ত গাছ চিহ্নিত করে দ্রুত উপড়ে পুড়িয়ে বা মাটিতে পুঁতে ফেলুন।",
+            "২. ভাইরাসের বাহক পোকা (সাদা মাছি ও থ্রিপস) দমনে ইমিডাক্লোপ্রিড (এডমায়ার/টিডো) ০.৫ মিলি/লিটার স্প্রে করুন।",
+            "৩. বিকল্প হিসেবে অ্যাসিটামিপ্রিড বা ডায়াফেনথিউরন স্প্রে করুন।",
+            "৪. হলুদ আঠালো ফাঁদ (Yellow Sticky Trap) ব্যবহার করুন।"
+        ],
+        "prevention": [
+            "১. রোগমুক্ত ও প্রত্যয়িত সুস্থ চারা রোপণ করুন।",
+            "২. নেট হাউসে চারা তৈরি করুন।",
+            "৩. জমির চারপাশের আগাছা পরিষ্কার রাখুন।",
+            "৪. নিয়মিত নিম তেল স্প্রে করে বাহক পোকার আক্রমণ প্রতিহত করুন।"
+        ]
+    },
+    "Class_4__Leaf_curly_virus": {
+        "title": "পাতা কোঁকড়ানো ভাইরাস রোগ (Leaf Curl Virus)",
+        "severity": "তীব্র ঝুঁকি",
+        "treatment": [
+            "১. আক্রান্ত গাছ অবিলম্বে অপসারণ করে নষ্ট করুন।",
+            "২. বাহক পোকা (সাদা মাছি/থ্রিপস) দমনে ইমিডাক্লোপ্রিড ০.৫ মিলি/লিটার স্প্রে করুন।",
+            "৩. হলুদ ফাঁদ ব্যবহার করে মাছি নিয়ন্ত্রণ করুন।",
+            "৪. গাছে সুষম অনুখাদ্য স্প্রে করে রোগ প্রতিরোধ ক্ষমতা বাড়ান।"
+        ],
+        "prevention": [
+            "১. রোগ প্রতিরোধী জাত ব্যবহার করুন।",
+            "২. নিয়মিত আগাছা ধ্বংস করুন।",
+            "৩. বাহক পোকার আগমন পর্যবেক্ষণ করুন।",
+            "৪. জৈব নিম তেল ব্যবহার করুন।"
+        ]
+    },
+    "Class_4___Leaf_curly_virus": {
+        "title": "পাতা কোঁকড়ানো ভাইরাস রোগ (Leaf Curl Virus)",
+        "severity": "তীব্র ঝুঁকি",
+        "treatment": [
+            "১. সংক্রামিত গাছ তুলে পুড়িয়ে ফেলুন।",
+            "২. বাহক পোকা দমনে কীটনাশক ইমিডাক্লোপ্রিড স্প্রে করুন।",
+            "৩. হলুদ স্টিকি ট্র্যাপ স্থাপন করুন।",
+            "৪. অতিরিক্ত নাইট্রোজেন সার দেওয়া বন্ধ রাখুন।"
+        ],
+        "prevention": [
+            "১. সুস্থ বীজ ও চারা নির্বাচন করুন।",
+            "২. বাগান পরিষ্কার রাখুন।",
+            "৩. চারা জাল দিয়ে ঢেকে রাখুন।",
+            "৪. নিয়মিত পরিচর্যা করুন।"
+        ]
+    },
+    "Die_Back": {
+        "title": "ডাই-ব্যাক বা ডগা মরা রোগ (Die Back)",
+        "severity": "তীব্র ঝুঁকি",
+        "treatment": [
+            "১. আক্রান্ত ডাল সুস্থ অংশের ২-৩ ইঞ্চি নিচ থেকে কেটে পুড়িয়ে ফেলুন।",
+            "২. কাটার স্থানে বোর্দো পেস্ট বা কপার অক্সিক্লোরাইডের ঘন প্রলেপ দিন।",
+            "৩. কার্বেন্ডাজিম বা প্রোপিকোনাজল ১ মিলি/লিটার পুরো গাছে স্প্রে করুন।",
+            "৪. ছাঁটাই করার কাঁচি অ্যালকোহল দিয়ে জীবাণুমুক্ত করুন।"
+        ],
+        "prevention": [
+            "১. বর্ষার আগে ও পরে গাছে কপার ছত্রাকনাশক স্প্রে করুন।",
+            "২. গাছের গোড়ায় পানি জমতে দেবেন না।",
+            "৩. সুষম পটাশ সার ও জৈব সার দিন।",
+            "৪. সময়মতো শুকনো ডাল ছাঁটাই করুন।"
         ]
     },
     "Pepper,_bell___healthy": {
@@ -776,10 +904,28 @@ EXPERT_DISEASE_DB = {
 def get_disease_advice_from_openai(plant_name: str, raw_disease_name: str) -> dict:
     """
     রোগের চিকিৎসা ও প্রতিরোধ গাইড বাংলায় জেনারেট করে:
-    ১. Google Gemini 3.5 Flash (সক্রিয় ও দ্রুত)
-    ২. OpenAI GPT-4o-mini (যদি সক্রিয় থাকে)
-    ৩. ৯৭টি রোগের বিশেষায়িত বোটানিক্যাল নলেজবেস (অফলাইন/ফলব্যাক)
+    ১. Non-Plant Interceptor (অপ্রাসঙ্গিক ছবি)
+    ২. Google Gemini 3.5 Flash (সক্রিয় ও দ্রুত)
+    ৩. OpenAI GPT-4o-mini (যদি সক্রিয় থাকে)
+    ৪. ৯৭টি রোগের বিশেষায়িত বোটানিক্যাল নলেজবেস (অফলাইন/ফলব্যাক)
     """
+    # ০. নন-প্ল্যান্ট বা অপ্রাসঙ্গিক ইমেজ ফিল্টার
+    if raw_disease_name in ['Non_Plant_Object', 'Not_A_Plant', 'non_plant', 'non_plant_background', 'clutter'] or any(raw_disease_name.startswith(f"{i:03d}.") for i in range(1, 258)):
+        return {
+            "formatted_title": "কোনো গাছের পাতা সনাক্ত করা যায়নি",
+            "severity": "অপ্রাসঙ্গিক ছবি",
+            "treatment_plan": [
+                "১. এটি কোনো গাছের পাতা বা উদ্ভিদের ছবি নয়।",
+                "২. সঠিক রোগ নির্ণয়ের জন্য শুধুমাত্র আক্রান্ত গাছের পাতার ছবি আপলোড করুন।",
+                "৩. পর্যাপ্ত আলোতে পাতার রোগাক্রান্ত অংশের পরিষ্কার ছবি তুলুন।",
+                "৪. গাড়ি, মানুষ, জীবজন্তু বা অপ্রাসঙ্গিক বস্তুর ছবি পরিহার করুন।"
+            ],
+            "prevention_guide": [
+                "১. ক্যামেরায় সরাসরি গাছের পাতার স্পষ্ট ছবি তুলুন।",
+                "২. অপ্রাসঙ্গিক বা ঘোলাটে ছবি আপলোড করা থেকে বিরত থাকুন।"
+            ]
+        }
+
     matched_data = EXPERT_DISEASE_DB.get(raw_disease_name)
     display_plant = plant_name if plant_name and plant_name != "গাছ" and plant_name != "গাছের নাম জানা নেই" else "গাছ"
 
@@ -788,47 +934,60 @@ def get_disease_advice_from_openai(plant_name: str, raw_disease_name: str) -> di
     if gemini_key and gemini_key.strip():
         try:
             import requests as http_requests
-            gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key={gemini_key}"
+            
+            clean_disease_context = raw_disease_name.replace('Tomato___', '').replace('Tomato_', '').replace('_', ' ')
             
             gemini_prompt = f"""
 You are an expert plant pathologist and agricultural consultant for Bangladesh.
-Plant Name: '{display_plant}'
-Detected Disease: '{raw_disease_name}'
+Crop/Plant: '{display_plant}'
+Diagnosed Condition/Pathogen: '{raw_disease_name}' ({clean_disease_context})
 
-Generate a strictly valid JSON in Bengali with:
-1. "formatted_title": Disease title in Bengali (e.g. "{display_plant}: রোগের বাংলা নাম")
-2. "severity": Severity level ('তীব্র ঝুঁকি', 'মাঝারি ঝুঁকি', 'কম ঝুঁকি')
-3. "treatment_plan": Array of exactly 4 concise bullet steps in Bengali for chemical/organic treatment (কি ওষুধ/ছত্রাকনাশক স্প্রে করতে হবে).
-4. "prevention_guide": Array of exactly 4 concise bullet steps in Bengali for preventive measures (কিভাবে প্রতিরোধ করতে হবে).
+Diagnostic Rules:
+1. "formatted_title": The disease title in Bengali for this crop (e.g. if crop is 'মরিচ' and virus is mosaic/curl/yellow virus, use "{display_plant}: পাতা কোঁকড়ানো / মোজাইক ভাইরাস রোগ").
+2. "severity": One of 'তীব্র ঝুঁকি', 'মাঝারি ঝুঁকি', 'কম ঝুঁকি'. For viral/curl diseases, use 'তীব্র ঝুঁকি'.
+3. "treatment_plan": Array of exactly 4 actionable, practical Bengali treatment bullet steps mentioning specific cures/medicines (e.g. সাদা মাছি/থ্রিপস বাহক পোকা দমনে ইমিডাক্লোপ্রিড/এডমায়ার, আক্রান্ত গাছ অপসারণ ইত্যাদি).
+4. "prevention_guide": Array of exactly 4 actionable Bengali prevention steps to prevent recurrence.
 
-Return ONLY valid JSON.
+Return ONLY strictly valid JSON.
 """
             payload = {
                 "contents": [{"parts": [{"text": gemini_prompt}]}],
                 "generationConfig": {"response_mime_type": "application/json"}
             }
-            
-            r = http_requests.post(gemini_url, json=payload, timeout=10)
-            if r.status_code == 200:
-                raw_text = r.json()['candidates'][0]['content']['parts'][0]['text'].strip()
-                if raw_text.startswith("```json"):
-                    raw_text = raw_text[7:]
-                elif raw_text.startswith("```"):
-                    raw_text = raw_text[3:]
-                if raw_text.endswith("```"):
-                    raw_text = raw_text[:-3]
-                raw_text = raw_text.strip()
 
-                first_b = raw_text.find('{')
-                last_b = raw_text.rfind('}')
-                if first_b != -1 and last_b != -1 and last_b > first_b:
-                    raw_text = raw_text[first_b:last_b + 1]
+            candidate_models = [
+                "gemini-3.6-flash",
+                "gemini-flash-lite-latest",
+                "gemini-flash-latest",
+                "gemini-3.7-flash"
+            ]
 
-                data = json.loads(raw_text)
-                required_keys = ['formatted_title', 'severity', 'treatment_plan', 'prevention_guide']
-                if all(k in data for k in required_keys) and len(data['treatment_plan']) >= 3:
-                    print(f"[Gemini Service] ✅ Generated dynamic advice from Gemini for {raw_disease_name}")
-                    return data
+            for model_name in candidate_models:
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={gemini_key}"
+                try:
+                    r = http_requests.post(url, json=payload, timeout=5)
+                    if r.status_code == 200:
+                        raw_text = r.json()['candidates'][0]['content']['parts'][0]['text'].strip()
+                        if raw_text.startswith("```json"):
+                            raw_text = raw_text[7:]
+                        elif raw_text.startswith("```"):
+                            raw_text = raw_text[3:]
+                        if raw_text.endswith("```"):
+                            raw_text = raw_text[:-3]
+                        raw_text = raw_text.strip()
+
+                        first_b = raw_text.find('{')
+                        last_b = raw_text.rfind('}')
+                        if first_b != -1 and last_b != -1 and last_b > first_b:
+                            raw_text = raw_text[first_b:last_b + 1]
+
+                        data = json.loads(raw_text)
+                        required_keys = ['formatted_title', 'severity', 'treatment_plan', 'prevention_guide']
+                        if all(k in data for k in required_keys) and len(data['treatment_plan']) >= 3:
+                            print(f"[Gemini Service] ✅ Generated dynamic advice from Gemini ({model_name}) for {raw_disease_name}")
+                            return data
+                except Exception:
+                    continue
         except Exception as g_err:
             print(f"[Gemini Service] ⚠️ Gemini failed: {g_err}")
 
@@ -889,9 +1048,8 @@ Return ONLY valid JSON.
             "prevention_guide": matched_data["prevention"]
         }
 
-    # ৪. জেনেরিক সুস্থ/অসুস্থ পাতা হ্যান্ডলার
+    # ৪. জেনেরিক সুস্থ/অসুস্থ পাতা হ্যান্ডলার (বাংলা ট্রান্সলেশন সহ)
     is_healthy = any(h.lower() in raw_disease_name.lower() for h in ['healthy', 'fresh', 'pure'])
-    clean_name = raw_disease_name.replace('_', ' ').replace('---', ' ').replace('Tomato', '').replace('Eggplant', '').replace('Cucumber', '').strip()
 
     if is_healthy:
         return {
@@ -911,13 +1069,53 @@ Return ONLY valid JSON.
             ]
         }
 
+    # বাংলা নামের স্মার্ট ডিকশনারি
+    raw_lower = raw_disease_name.lower()
+    if 'mosaic' in raw_lower or 'curl' in raw_lower or 'yellow_virus' in raw_lower:
+        bn_disease = "পাতা কোঁকড়ানো / মোজাইক ভাইরাস রোগ"
+        sev = "তীব্র ঝুঁকি"
+    elif 'bacterial' in raw_lower and 'spot' in raw_lower:
+        bn_disease = "ব্যাকটেরিয়াল পাতার দাগ রোগ"
+        sev = "মাঝারি ঝুঁকি"
+    elif 'spot' in raw_lower or 'blight' in raw_lower:
+        bn_disease = "পাতার দাগ ও পোড়া রোগ"
+        sev = "মাঝারি ঝুঁকি"
+    elif 'powdery' in raw_lower:
+        bn_disease = "পাউডারি মিলডিউ (সাদা গুঁড়ো রোগ)"
+        sev = "মাঝারি ঝুঁকি"
+    elif 'downy' in raw_lower:
+        bn_disease = "ডাউনি মিলডিউ ছত্রাক রোগ"
+        sev = "মাঝারি ঝুঁকি"
+    elif 'anthracnose' in raw_lower:
+        bn_disease = "অ্যানথ্রাকনোজ রোগ"
+        sev = "তীব্র ঝুঁকি"
+    elif 'canker' in raw_lower:
+        bn_disease = "ক্যাঙ্কার রোগ"
+        sev = "তীব্র ঝুঁকি"
+    elif 'mite' in raw_lower:
+        bn_disease = "মাকড় / মাইট রোগ"
+        sev = "মাঝারি ঝুঁকি"
+    elif 'die_back' in raw_lower:
+        bn_disease = "ডাই-ব্যাক বা ডগা মরা রোগ"
+        sev = "তীব্র ঝুঁকি"
+    elif 'insect' in raw_lower or 'pest' in raw_lower:
+        bn_disease = "ক্ষতিকর পোকামাকড়ের আক্রমণ"
+        sev = "মাঝারি ঝুঁকি"
+    elif 'deficiency' in raw_lower:
+        bn_disease = "পুষ্টিহীনতার লক্ষণ"
+        sev = "মাঝারি ঝুঁকি"
+    else:
+        clean_name = raw_disease_name.replace('_', ' ').replace('---', ' ').replace('Tomato', '').replace('Eggplant', '').replace('Cucumber', '').strip()
+        bn_disease = f"{clean_name} রোগ"
+        sev = "মাঝারি ঝুঁকি"
+
     return {
-        "formatted_title": f"{display_plant}: {clean_name}",
-        "severity": "মাঝারি ঝুঁকি",
+        "formatted_title": f"{display_plant}: {bn_disease}",
+        "severity": sev,
         "treatment_plan": [
-            "১. আক্রান্ত পাতা ও ডাল কেটে বাগান থেকে সরিয়ে ফেলুন।",
-            "২. কপার সমৃদ্ধ বা অনুমোদিত ছত্রাকনাশক/কীটনাশক প্রতি লিটারে ২ গ্রাম হারে স্প্রে করুন।",
-            "৩. গাছের গোড়ায় অতিরিক্ত পানি জমা বন্ধ করুন এবং মাটি শুকাতে দিন।",
+            "১. আক্রান্ত পাতা ও ডাল সাবধানে কেটে বাগান থেকে সরিয়ে ধ্বংস করুন।",
+            "২. রোগের প্রাথমিক অবস্থায় কপার সমৃদ্ধ বা অনুমোদিত ছত্রাকনাশক/কীটনাশক ২ গ্রাম/লিটার স্প্রে করুন।",
+            "৩. গাছের গোড়ায় অতিরিক্ত পানি জমা বন্ধ রাখুন এবং মাটি শুকাতে দিন।",
             "৪. প্রাকৃতিক নিম তেল স্প্রে করে প্রাথমিক সংক্রমণ নিয়ন্ত্রণ করুন।"
         ],
         "prevention_guide": [

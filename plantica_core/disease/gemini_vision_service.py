@@ -48,15 +48,32 @@ Analyze the uploaded plant leaf image thoroughly.
 {plant_context}
 
 Diagnostic Rules:
-1. Identify the plant and determine if the leaf is healthy or affected by a disease/pest/deficiency (e.g. Blight, Canker, Rust, Powdery/Downy Mildew, Anthracnose, Leaf Spot, Mosaic Virus, Mealybug, Spider Mite, Leaf Curl, Nutrient Deficiency, or Healthy/Fresh).
-2. "plant_name": The identified plant name in Bengali (e.g. "টমেটো", "লেবু", "বেগুন", "শসা", "লাউ", "গোলাপ", "পেঁপে", "আম", "স্ট্রবেরি", "অ্যালোভেরা", ইত্যাদি).
-3. "formatted_title": A polished Bengali title (e.g. "টমেটো: নাবি ধসা রোগ (Late Blight)" or "লেবু: ক্যাঙ্কার রোগ" or "গোলাপ: সুস্থ ও রোগমুক্ত পাতা").
-4. "raw_disease_label": The standard English botanical disease name or 'Healthy'.
-5. "severity": One of 'তীব্র ঝুঁকি', 'মাঝারি ঝুঁকি', 'কম ঝুঁকি' (for healthy leaves, use 'কম ঝুঁকি' or 'কোনো ঝুঁকি নেই').
-6. "confidence_percentage": An accurate confidence score as a float number between 88.0 and 99.0 (e.g. 94.5).
-7. "confidence_text": Confidence formatted in Bengali digits (e.g. "৯৪.৫% নিশ্চিত").
-8. "treatment_plan": Array of exactly 4 actionable, practical Bengali treatment bullet steps mentioning specific organic/chemical cures (e.g. ম্যানকোজেব, রিডোমিল গোল্ড, কপার অক্সিক্লোরাইড, নিম তেল, ইত্যাদি) or plant maintenance steps if healthy.
-9. "prevention_guide": Array of exactly 4 actionable Bengali prevention steps to prevent recurrence.
+1. FIRST check if the image is actually a plant leaf, crop, or flower. If the image is NOT a plant (e.g. it is a car, vehicle, animal, human, electronic device, furniture, clothing, document, building, or random non-plant object):
+   - "plant_name": "গাছ সনাক্ত হয়নি"
+   - "formatted_title": "কোনো গাছের পাতা সনাক্ত করা যায়নি"
+   - "raw_disease_label": "Non_Plant_Object"
+   - "severity": "অপ্রাসঙ্গিক ছবি"
+   - "confidence_percentage": 99.0
+   - "confidence_text": "পাতার ছবি নয়"
+   - "treatment_plan": [
+       "১. এটি কোনো গাছের পাতা বা উদ্ভিদের ছবি নয়।",
+       "২. রোগ সনাক্তকরণের জন্য আক্রান্ত গাছের পাতার পরিষ্কার ছবি তুলুন।",
+       "৩. পর্যাপ্ত আলোতে পাতার রোগাক্রান্ত অংশে ফোকাস করে ছবি আপলোড করুন।",
+       "৪. মানুষ, গাড়ি, জীবজন্তু বা অপ্রাসঙ্গিক বস্তুর ছবি পরিহার করুন।"
+     ]
+   - "prevention_guide": [
+       "১. ক্যামেরায় সরাসরি গাছের পাতার স্পষ্ট ছবি তুলুন।",
+       "২. অপ্রাসঙ্গিক বা ঘোলাটে ছবি রোগ নির্ণয়ে বিভ্রান্তি তৈরি করে।"
+     ]
+2. If it IS a plant, identify the plant and determine if the leaf is healthy or affected by a disease/pest/deficiency (e.g. Blight, Canker, Rust, Powdery/Downy Mildew, Anthracnose, Leaf Spot, Mosaic Virus, Mealybug, Spider Mite, Leaf Curl, Nutrient Deficiency, or Healthy/Fresh).
+3. "plant_name": The identified plant name in Bengali (e.g. "টমেটো", "লেবু", "বেগুন", "শসা", "লাউ", "গোলাপ", "পেঁপে", "আম", "স্ট্রবেরি", "অ্যালোভেরা", ইত্যাদি).
+4. "formatted_title": A polished Bengali title (e.g. "টমেটো: নাবি ধসা রোগ (Late Blight)" or "লেবু: ক্যাঙ্কার রোগ" or "গোলাপ: সুস্থ ও রোগমুক্ত পাতা").
+5. "raw_disease_label": The standard English botanical disease name or 'Healthy'.
+6. "severity": One of 'তীব্র ঝুঁকি', 'মাঝারি ঝুঁকি', 'কম ঝুঁকি' (for healthy leaves, use 'কম ঝুঁকি' or 'কোনো ঝুঁকি নেই').
+7. "confidence_percentage": An accurate confidence score as a float number between 88.0 and 99.0 (e.g. 94.5).
+8. "confidence_text": Confidence formatted in Bengali digits (e.g. "৯৪.৫% নিশ্চিত").
+9. "treatment_plan": Array of exactly 4 actionable, practical Bengali treatment bullet steps mentioning specific organic/chemical cures (e.g. ম্যানকোজেব, রিডোমিল গোল্ড, কপার অক্সিক্লোরাইড, নিম তেল, ইত্যাদি) or plant maintenance steps if healthy.
+10. "prevention_guide": Array of exactly 4 actionable Bengali prevention steps to prevent recurrence.
 
 Output strictly valid JSON with this exact schema:
 {{
@@ -84,11 +101,10 @@ Output strictly valid JSON with this exact schema:
     import requests
     # List of Gemini models to try in order (ensures compatibility with all Google API versions)
     candidate_models = [
-        "gemini-3.7-flash",
-        "gemini-3.5-flash",
+        "gemini-3.6-flash",
         "gemini-flash-lite-latest",
         "gemini-flash-latest",
-        "gemini-1.5-flash"
+        "gemini-3.7-flash"
     ]
     
     payload = {
