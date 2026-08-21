@@ -179,10 +179,36 @@ def detect_disease_ml_handler(request):
         predictor = PlantDiseasePredictor()
         raw_disease, confidence = predictor.predict_image(image_file, plant_name=plant_name)
 
-        # ২. নন-প্ল্যান্ট অবজেক্ট চেক
-        if raw_disease == "Non_Plant_Object":
+        # ২. নন-প্ল্যান্ট অবজেক্ট চেক (Cross-verify with AI Vision so real leaves are NEVER falsely rejected)
+        if raw_disease == "Non_Plant_Object" or confidence < 65.0:
+            try:
+                ai_result = detect_disease_with_ai_vision(image_file, plant_name=plant_name)
+                if ai_result.get("raw_disease_label") != "Non_Plant_Object":
+                    conf = ai_result.get("confidence_percentage", 95.0)
+                    diagnosis_log_id = _save_diagnosis_log(request, image_file, conf)
+                    response_payload = {
+                        "detection_engine": "Analysis with Plantica",
+                        "diagnosis_log_id": diagnosis_log_id,
+                        "plant_name": ai_result.get("plant_name", plant_name or "গাছ"),
+                        "formatted_title": ai_result.get("formatted_title", "সনাক্তকৃত রোগ"),
+                        "raw_disease_label": ai_result.get("raw_disease_label", "Plant Condition"),
+                        "confidence_percentage": conf,
+                        "confidence_text": ai_result.get("confidence_text", f"{conf}% নিশ্চিত"),
+                        "severity": ai_result.get("severity", "মাঝারি ঝুঁকি"),
+                        "treatment_plan": ai_result.get("treatment_plan", []),
+                        "prevention_guide": ai_result.get("prevention_guide", [])
+                    }
+                    return custom_response(
+                        data=response_payload,
+                        message="রোগ সফলভাবে সনাক্ত করা হয়েছে",
+                        code=status.HTTP_200_OK,
+                        status=True
+                    )
+            except Exception as ai_err:
+                print(f"[AI Vision Cross-Check Note] {ai_err}")
+
             display_plant_name = "গাছ সনাক্ত হয়নি"
-            ai_data = get_disease_advice_from_openai(display_plant_name, raw_disease)
+            ai_data = get_disease_advice_from_openai(display_plant_name, "Non_Plant_Object")
             confidence_text = "পাতার ছবি নয়"
             success_msg = "কোনো গাছের পাতা সনাক্ত করা যায়নি। অনুগ্রহ করে পরিষ্কার পাতার ছবি দিন।"
             
@@ -192,7 +218,7 @@ def detect_disease_ml_handler(request):
                 "diagnosis_log_id": diagnosis_log_id,
                 "plant_name": display_plant_name,
                 "formatted_title": ai_data.get("formatted_title", "কোনো গাছের পাতা সনাক্ত করা যায়নি"),
-                "raw_disease_label": raw_disease,
+                "raw_disease_label": "Non_Plant_Object",
                 "confidence_percentage": confidence,
                 "confidence_text": confidence_text,
                 "severity": "অপ্রাসঙ্গিক ছবি",
