@@ -50,7 +50,9 @@ plantica_core/media/*
 .coverage
 htmlcov/
 
-# ML Model files (Allow plantica trained model to be tracked)
-!plantica_core/disease/ml_models/best_model.keras
+# ML Model files (Allow production ONNX model to be tracked)
+!plantica_core/disease/ml_models/plantica_convnext_387.onnx
 !plantica_core/disease/ml_models/classes.json
 !plantica_core/disease/ml_models/labels.txt
+*.pth
+*.zip
